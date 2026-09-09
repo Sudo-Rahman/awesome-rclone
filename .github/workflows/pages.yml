@@ -19,21 +19,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          # full history so the build can date pages from the README's last change
+          fetch-depth: 0
 
-      - name: Build pages artifact
-        run: |
-          cp -r .pages _site
-          cp CNAME _site/
-          python3 -c "
-          with open('_site/index.html', 'r') as f:
-              html = f.read()
-          with open('README.md', 'r') as f:
-              readme = f.read()
-          old = '<script id=\"readme-source\" type=\"text/plain\"></script>'
-          new = '<script id=\"readme-source\" type=\"text/plain\">\n' + readme + '\n    </script>'
-          with open('_site/index.html', 'w') as f:
-              f.write(html.replace(old, new))
-          "
+      - name: Build static site from README
+        run: python3 build.py _site
 
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
