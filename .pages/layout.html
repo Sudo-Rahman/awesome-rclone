@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{title}}</title>
+    <meta name="description" content="{{description}}">
+    <link rel="canonical" href="{{canonical}}">
+    <meta name="robots" content="{{robots}}">
+    <link rel="icon" type="image/svg+xml" href="https://raw.githubusercontent.com/sindresorhus/awesome/main/media/logo.svg">
+    <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/sindresorhus/awesome/main/media/logo.png">
+    <link rel="stylesheet" href="/styles.css">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Awesome Rclone">
+    <meta property="og:title" content="{{og_title}}">
+    <meta property="og:description" content="{{description}}">
+    <meta property="og:url" content="{{canonical}}">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="{{og_title}}">
+    <meta name="twitter:description" content="{{description}}">
+    <script type="application/ld+json">{{jsonld}}</script>
+  </head>
+  <body>
+    <div class="page-shell">
+{{body}}
+      <footer class="site-footer">
+        <span>Updated {{updated_human}}</span>
+        <a href="https://github.com/awesome-rclone/awesome-rclone" target="_blank" rel="noreferrer">Source on GitHub</a>
+        <a href="https://github.com/awesome-rclone/awesome-rclone/blob/main/contributing.md" target="_blank" rel="noreferrer">Add a project</a>
+        <a href="https://rclone.org" target="_blank" rel="noreferrer">rclone.org</a>
+      </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.1.0/dist/fuse.min.js" defer></script>
+    <script src="/search.js" defer></script>
+  </body>
+</html>
